@@ -13,7 +13,7 @@ spec:
         {{- with $.Values.schema.env }}
         env:
           - name: SCHEMA_FILE
-            value: db/{{ . }}.{{ $.Values.schema.extention }}
+            value: db/{{ $. }}.{{ $.Values.schema.extention }}
           {{- toYaml . | nindent 10 }}
         {{- end }}
       restartPolicy: Never
