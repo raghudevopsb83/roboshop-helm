@@ -6,6 +6,8 @@ configmap_data:
 
 schema:
   enabled: true
+  jobs:
+    - schema
   env:
     - name: DB_TYPE
       value: mongo
