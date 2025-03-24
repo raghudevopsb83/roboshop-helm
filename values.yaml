@@ -3,3 +3,6 @@ service:
   containerPort: "8080"
   type: ClusterIP
 
+schema:
+  enabled: false
+
