@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: {{ .Values.component_name }}
 data:
-  {{- include ".Values.configmap_data" . | indent 2}}
+  {{- include "Values.configmap_data" . | indent 2}}
 
 
