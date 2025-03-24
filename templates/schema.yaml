@@ -10,12 +10,12 @@ spec:
       containers:
       - name: schema-load
         image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
-        {{- with $.Values.schema.env }}
+        envFrom:
+          - configMapRef:
+              name: {{ .Values.component_name }}
         env:
           - name: SCHEMA_FILE
             value: db/{{ . }}.{{ $.Values.schema.extention }}
-          {{- toYaml . | nindent 10 }}
-        {{- end }}
       restartPolicy: Never
   backoffLimit: 4
 {{- end }}
