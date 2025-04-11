@@ -17,6 +17,8 @@ configmap_data:
   PAYMENT_HOST: "payment"
   PAYMENT_PORT: "8080"
 
-
+ingress:
+  enabled: true
+  name: frontend-dev.rdevopsb83.online
 
 
