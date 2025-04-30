@@ -16,3 +16,10 @@ schema:
     - app-user
   extention: sql
 
+resources:
+  requests:
+    memory: "1800Mi"
+    cpu: "1200m"
+  limits:
+    memory: "3400Mi"
+    cpu: "2400m"
