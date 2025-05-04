@@ -21,5 +21,6 @@ resources:
     memory: "100Mi"
     cpu: "250m"
 
-
+extra_labels:
+  log_type: json
 

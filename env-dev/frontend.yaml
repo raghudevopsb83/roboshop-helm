@@ -29,3 +29,7 @@ resources:
     memory: "200Mi"
     cpu: "250m"
 
+
+extra_labels:
+  log_type: raw
+
