@@ -25,7 +25,7 @@ spec:
       - name: roboshop-{{ .Values.component_name }}
         image: 633788536644.dkr.ecr.us-east-1.amazonaws.com/{{ .Values.component_name }}:{{ .Values.imageTag }}
         envFrom:
-          - configMapRef:
+          - secretRef:
               name: {{ .Values.component_name }}
         readinessProbe:
           httpGet:
