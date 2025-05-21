@@ -13,14 +13,14 @@ spec:
       maxSurge: 1
       maxUnavailable: 0
   replicas: {{ .Values.replicas }}
-  volumes:
-  - emptyDir: {}
-    name: tmp
   selector:
     matchLabels:
       component: {{ .Values.component_name }}
       log_type: {{ .Values.extra_labels.log_type }}
   template:
+    volumes:
+    - emptyDir: {}
+      name: tmp
     metadata:
       labels:
         component: {{ .Values.component_name }}
