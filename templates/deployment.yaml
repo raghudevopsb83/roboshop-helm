@@ -50,6 +50,7 @@ spec:
         {{- end }}
         securityContext:
           readOnlyRootFilesystem: true
+          runAsUser: 101
         volumeMounts:
         - mountPath: {{ .Values.mountPath }}
           name: tmp
