@@ -7,17 +7,11 @@ metadata:
 spec:
   template:
     spec:
-      volumes:
-      - emptyDir: {}
-        name: tmp
       containers:
       - name: schema-load
         image: 633788536644.dkr.ecr.us-east-1.amazonaws.com/{{ .Values.component_name }}-schema:latest
         securityContext:
           readOnlyRootFilesystem: true
-        volumeMounts:
-        - mountPath: {{ .Values.mountPath }}
-          name: tmp
         envFrom:
           - secretRef:
               name: {{ .Values.component_name }}
