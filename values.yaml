@@ -12,3 +12,5 @@ ingress:
   enabled: false
 
 replicas: 2
+
+mountPath: /tmp
