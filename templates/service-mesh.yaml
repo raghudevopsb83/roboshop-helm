@@ -5,4 +5,10 @@ metadata:
 spec:
   mtls:
     mode: PERMISSIVE
+---
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+  name: {{ .Values.component_name }}-deny
+spec: {}
 
