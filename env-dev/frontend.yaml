@@ -34,3 +34,7 @@ extra_labels:
   log_type: raw
 
 mountPath: /var/cache/nginx
+
+istio:
+  principals: ["cluster.local/ns/default/sa/ingress-nginx"]
+

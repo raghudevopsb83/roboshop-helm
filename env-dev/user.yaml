@@ -15,3 +15,6 @@ resources:
 
 extra_labels:
   log_type: json
+
+istio:
+  principals: ["cluster.local/ns/example2/sa/default"]
