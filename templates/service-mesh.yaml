@@ -3,25 +3,38 @@ kind: PeerAuthentication
 metadata:
   name: {{ .Values.component_name }}
 spec:
+  selector:
+    matchLabels:
+      component: {{ .Values.component_name }}
   mtls:
     mode: PERMISSIVE
 ---
 apiVersion: security.istio.io/v1
 kind: AuthorizationPolicy
 metadata:
-  name: {{ .Values.component_name }}-deny
-spec: {}
----
-apiVersion: security.istio.io/v1
-kind: AuthorizationPolicy
-metadata:
   name: {{ .Values.component_name }}-allow
 spec:
+  selector:
+    matchLabels:
+      component: {{ .Values.component_name }}
   action: ALLOW
   rules:
   - from:
     - source:
         principals: {{ .Values.istio.principals }}
-
+---
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+  name: {{ .Values.component_name }}-deny
+spec:
+  selector:
+    matchLabels:
+      component: {{ .Values.component_name }}
+  action: DENY
+  rules:
+  - from:
+    - source:
+        notPrincipals: {{ .Values.istio.principals }}
 
 
