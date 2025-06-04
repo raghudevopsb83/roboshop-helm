@@ -27,3 +27,5 @@ resources:
 extra_labels:
   log_type: raw
 
+istio:
+  principals: ["cluster.local/ns/app/sa/frontend"]
