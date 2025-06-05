@@ -36,5 +36,6 @@ extra_labels:
 mountPath: /var/cache/nginx
 
 istio:
+  enabled: false
   principals: ["cluster.local/ns/default/sa/ingress-nginx"]
 

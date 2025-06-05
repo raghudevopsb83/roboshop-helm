@@ -16,4 +16,5 @@ replicas: 2
 mountPath: /tmp
 
 istio:
+  enabled: true
   principals: []

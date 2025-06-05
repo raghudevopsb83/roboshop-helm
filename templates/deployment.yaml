@@ -22,6 +22,8 @@ spec:
       labels:
         component: {{ .Values.component_name }}
         log_type: {{ .Values.extra_labels.log_type }}
+      annotations:
+        sidecar.istio.io/inject: "{{ .Values.istio.enabled }}"
     spec:
       serviceAccountName: {{ .Values.component_name }}
       volumes:
