@@ -17,5 +17,5 @@ extra_labels:
   log_type: json
 
 istio:
-  principals: ["cluster.local/ns/app/sa/frontend", "cluster.local/ns/app/sa/payment]
+  principals: ["cluster.local/ns/app/sa/frontend", "cluster.local/ns/app/sa/payment"]
 
